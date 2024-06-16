@@ -5,10 +5,9 @@ import logoImg from "@/assets/logo.png";
 import styles from "./main-header.module.css";
 import Image from "next/image";
 import HeaderBackground from "./header-background";
-import { usePathname } from "next/navigation";
+import NavLink from "./nav-link";
 
 export default function MainHeader() {
-  const path = usePathname();
   return (
     <>
       <HeaderBackground />
@@ -20,24 +19,10 @@ export default function MainHeader() {
         <nav className={styles.nav}>
           <ul>
             <li>
-              <Link
-                href="/meals"
-                className={
-                  path.startsWith("/meals") ? styles.active : undefined
-                }
-              >
-                Browse Meals
-              </Link>
+              <NavLink href="/meals">Browse Meals</NavLink>
             </li>
             <li>
-              <Link
-                href="/community"
-                className={
-                  path.startsWith("/community") ? styles.active : undefined
-                }
-              >
-                Food Community
-              </Link>
+              <NavLink href="/community">Food community</NavLink>
             </li>
           </ul>
         </nav>
